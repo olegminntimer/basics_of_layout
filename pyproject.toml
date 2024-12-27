@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "basics-of-layout "
+version = "0.1.0"
+description = ""
+authors = ["Oleg Timer... <olegtimer@yandex.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
