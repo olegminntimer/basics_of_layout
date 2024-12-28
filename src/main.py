@@ -1,6 +1,6 @@
 # Импорт встроенной библиотеки для работы веб-сервера
 from http.server import BaseHTTPRequestHandler, HTTPServer
-import time
+import requests
 
 # Для начала определим настройки запуска
 hostName = "localhost" # Адрес для доступа по сети
@@ -21,6 +21,9 @@ class MyServer(BaseHTTPRequestHandler):
             self.end_headers() # Завершение формирования заголовков ответа
             with open("../html/contacts.html", "r") as f: # Читаем содержимое HTML-файла с контактами
                 html_content = f.read()
+            # response = requests.get('https://github.com/olegminntimer/basics_of_layout/blam/feature-1/html/contacts.html')
+            # html_content = response.text
+            # print(html_content)
             self.wfile.write(bytes(html_content, "utf-8")) # Тело ответа
         else:
             # Если запрошен другой URL, отправляем 404 Not Found
